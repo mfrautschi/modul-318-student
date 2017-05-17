@@ -29,42 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
             this.btnSwitch = new System.Windows.Forms.Button();
             this.txtTo = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnNow = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnLater = new System.Windows.Forms.Button();
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.btnShare = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblFrom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(20, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 31);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "From:";
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblFrom.Location = new System.Drawing.Point(20, 112);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(85, 31);
+            this.lblFrom.TabIndex = 13;
+            this.lblFrom.Text = "From:";
             // 
-            // label2
+            // lblTo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(538, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 31);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "To:";
+            this.lblTo.AutoSize = true;
+            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(538, 115);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(54, 31);
+            this.lblTo.TabIndex = 14;
+            this.lblTo.Text = "To:";
             // 
             // btnSwitch
             // 
@@ -81,7 +82,7 @@
             this.txtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtTo.Location = new System.Drawing.Point(544, 149);
             this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(389, 36);
+            this.txtTo.Size = new System.Drawing.Size(384, 36);
             this.txtTo.TabIndex = 2;
             // 
             // txtFrom
@@ -98,7 +99,7 @@
             this.dtpDate.Location = new System.Drawing.Point(187, 409);
             this.dtpDate.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(233, 22);
+            this.dtpDate.Size = new System.Drawing.Size(253, 22);
             this.dtpDate.TabIndex = 6;
             // 
             // btnNow
@@ -111,25 +112,25 @@
             this.btnNow.Text = "Now";
             this.btnNow.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lblDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label3.Location = new System.Drawing.Point(181, 375);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 31);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Date:";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblDate.Location = new System.Drawing.Point(181, 375);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(80, 31);
+            this.lblDate.TabIndex = 11;
+            this.lblDate.Text = "Date:";
             // 
-            // label4
+            // lblTime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label4.Location = new System.Drawing.Point(463, 375);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 31);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Time:";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblTime.Location = new System.Drawing.Point(463, 375);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(82, 31);
+            this.lblTime.TabIndex = 12;
+            this.lblTime.Text = "Time:";
             // 
             // btnLater
             // 
@@ -165,12 +166,13 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnSearch.Location = new System.Drawing.Point(187, 497);
+            this.btnSearch.Location = new System.Drawing.Point(187, 509);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(602, 63);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dtpTime
             // 
@@ -185,6 +187,7 @@
             // 
             // btnShare
             // 
+            this.btnShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnShare.Location = new System.Drawing.Point(423, 667);
             this.btnShare.Name = "btnShare";
             this.btnShare.Size = new System.Drawing.Size(112, 37);
@@ -192,30 +195,40 @@
             this.btnShare.Text = "Share";
             this.btnShare.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F);
+            this.label1.Location = new System.Drawing.Point(259, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(459, 65);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Advanced Travel";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1012, 735);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShare);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
             this.Controls.Add(this.btnLater);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnNow);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnSwitch);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTo);
+            this.Controls.Add(this.lblFrom);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,21 +236,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Button btnSwitch;
         private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnNow;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnLater;
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Button btnShare;
+        private System.Windows.Forms.Label label1;
     }
 }
 
