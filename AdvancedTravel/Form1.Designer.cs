@@ -45,6 +45,13 @@
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.btnShare = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
+            this.columnFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDeparture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnArrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFrom
@@ -205,12 +212,63 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Advanced Travel";
             // 
+            // dataGridViewMain
+            // 
+            this.dataGridViewMain.AllowUserToAddRows = false;
+            this.dataGridViewMain.AllowUserToDeleteRows = false;
+            this.dataGridViewMain.AllowUserToResizeColumns = false;
+            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnFrom,
+            this.columnTo,
+            this.columnDeparture,
+            this.columnArrival,
+            this.columnDuration});
+            this.dataGridViewMain.Location = new System.Drawing.Point(375, 134);
+            this.dataGridViewMain.Name = "dataGridViewMain";
+            this.dataGridViewMain.ReadOnly = true;
+            this.dataGridViewMain.RowHeadersVisible = false;
+            this.dataGridViewMain.RowTemplate.Height = 24;
+            this.dataGridViewMain.Size = new System.Drawing.Size(625, 589);
+            this.dataGridViewMain.TabIndex = 16;
+            // 
+            // columnFrom
+            // 
+            this.columnFrom.HeaderText = "From";
+            this.columnFrom.Name = "columnFrom";
+            this.columnFrom.ReadOnly = true;
+            // 
+            // columnTo
+            // 
+            this.columnTo.HeaderText = "To";
+            this.columnTo.Name = "columnTo";
+            this.columnTo.ReadOnly = true;
+            // 
+            // columnDeparture
+            // 
+            this.columnDeparture.HeaderText = "Departure";
+            this.columnDeparture.Name = "columnDeparture";
+            this.columnDeparture.ReadOnly = true;
+            // 
+            // columnArrival
+            // 
+            this.columnArrival.HeaderText = "Arrival";
+            this.columnArrival.Name = "columnArrival";
+            this.columnArrival.ReadOnly = true;
+            // 
+            // columnDuration
+            // 
+            this.columnDuration.HeaderText = "Duration";
+            this.columnDuration.Name = "columnDuration";
+            this.columnDuration.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1012, 735);
+            this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShare);
             this.Controls.Add(this.dtpTime);
@@ -229,6 +287,7 @@
             this.Controls.Add(this.lblFrom);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +311,12 @@
         private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDeparture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnArrival;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDuration;
+        private System.Windows.Forms.DataGridView dataGridViewMain;
     }
 }
 

@@ -13,14 +13,18 @@ namespace AdvancedTravel
 {
     public partial class Form1 : Form
     {
+        Transport mTransport;
+
         public Form1()
         {
             InitializeComponent();
-            initializeController();
+            InitializeController();
         }
 
-        private void initializeController() {
-            
+        private void InitializeController()
+        {
+            mTransport = new Transport();
+            dataGridViewMain.Visible = false;
         }
 
         private void btnSwitch_Click(object sender, EventArgs e)
@@ -45,10 +49,30 @@ namespace AdvancedTravel
         private void btnSearch_Click(object sender, EventArgs e)
         {
             calcControlls();
+            clearDataGridView();
+            fillDataGridView();
         }
 
-        private void calcControlls() {
+        private void clearDataGridView() {
+            dataGridViewMain.Rows.Clear();
+        }
 
+        private void fillDataGridView() {
+            Connections lst = mTransport.GetConnections("Luzern", "Rothenburg");
+            foreach (Connection cn in lst.ConnectionList) {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dataGridViewMain);
+                row.Cells[0].Value = cn.From.Station.Name;
+                row.Cells[1].Value = cn.To.Station.Name;
+                row.Cells[2].Value = cn.From.Departure;
+                row.Cells[3].Value = cn.To.Arrival;
+                row.Cells[4].Value = cn.Duration;
+                dataGridViewMain.Rows.Add(row);
+            }
+        }
+
+        private void calcControlls()
+        {
             int mainY = 90;
             int mainX = 10;
 
@@ -89,6 +113,9 @@ namespace AdvancedTravel
             //btnSwitch & btnShare
             btnSwitch.Visible = false;
             btnShare.Visible = false;
+
+            //DataGridView
+            dataGridViewMain.Visible = true;
         }
     }
 }
