@@ -46,6 +46,13 @@ namespace AdvancedTravel
             btnOn.BackColor = SystemColors.Window;
         }
 
+        private void btnNow_Click(object sender, EventArgs e)
+        {
+            calcControlls();
+            clearDataGridView();
+            fillDataGridView();
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             calcControlls();
@@ -53,22 +60,31 @@ namespace AdvancedTravel
             fillDataGridView();
         }
 
-        private void clearDataGridView() {
+        private void clearDataGridView()
+        {
             dataGridViewMain.Rows.Clear();
         }
 
-        private void fillDataGridView() {
-            Connections lst = mTransport.GetConnections("Luzern", "Rothenburg");
-            foreach (Connection cn in lst.ConnectionList) {
+        private void fillDataGridView()
+        {
+            Connections lst = mTransport.GetConnections(txtFrom.Text, txtTo.Text);
+            foreach (Connection cn in lst.ConnectionList)
+            {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridViewMain);
                 row.Cells[0].Value = cn.From.Station.Name;
                 row.Cells[1].Value = cn.To.Station.Name;
-                row.Cells[2].Value = cn.From.Departure;
-                row.Cells[3].Value = cn.To.Arrival;
-                row.Cells[4].Value = cn.Duration;
+                row.Cells[2].Value = Convert.ToDateTime(cn.From.Departure).ToString("HH:mm");
+                row.Cells[3].Value = Convert.ToDateTime(cn.To.Arrival).ToString("HH:mm");
+                row.Cells[4].Value = calcTimeDifference(Convert.ToDateTime(cn.From.Departure), Convert.ToDateTime(cn.To.Arrival));
                 dataGridViewMain.Rows.Add(row);
             }
+        }
+
+        private String calcTimeDifference(DateTime endTime, DateTime startTime)
+        {
+            TimeSpan span = startTime.Subtract(endTime);
+            return span.ToString();
         }
 
         private void calcControlls()
@@ -116,6 +132,79 @@ namespace AdvancedTravel
 
             //DataGridView
             dataGridViewMain.Visible = true;
+        }
+
+        private void btnStation_Click(object sender, EventArgs e)
+        {
+            if (btnStation.Text.Equals("Search for Station"))
+            {
+                FormDefaultControllerDiVisible();
+                btnStation.Text = "Search for Timetable";
+            }
+            else
+            {
+                FormDefaultControllerVisible();
+                btnStation.Text = "Search for Station";
+            }
+        }
+
+        private void FormDefaultControllerVisible()
+        {
+            //Labels
+            lblFrom.Visible = true;
+            lblTo.Visible = true;
+            lblDate.Visible = true;
+            lblTime.Visible = true;
+
+            //TextFields
+            txtFrom.Visible = true;
+            txtTo.Visible = true;
+
+            //Buttons
+            btnNow.Visible = true;
+            btnLater.Visible = true;
+            btnOn.Visible = true;
+            btnOff.Visible = true;
+            btnSwitch.Visible = true;
+
+            //DateTimePicker
+            dtpDate.Visible = true;
+            dtpTime.Visible = true;
+
+            //DataGridView
+            dataGridViewMain.Location = new Point(375, 134);
+        }
+
+        private void FormDefaultControllerDiVisible()
+        {
+            //Labels
+            lblFrom.Visible = false;
+            lblTo.Visible = false;
+            lblDate.Visible = false;
+            lblTime.Visible = false;
+
+            //TextFields
+            txtFrom.Visible = false;
+            txtTo.Visible = false;
+
+            //Buttons
+            btnNow.Visible = false;
+            btnLater.Visible = false;
+            btnOn.Visible = false;
+            btnOff.Visible = false;
+            btnSwitch.Visible = false;
+            btnShare.Location = new Point(btnShare.Location.X, 550);
+            
+            //DateTimePicker
+            dtpDate.Visible = false;
+            dtpTime.Visible = false;
+
+            //DataGridView
+            dataGridViewMain.Visible = true;
+            dataGridViewMain.Location = new Point(140, 300);
+            dataGridViewMain.Height = 250;
+            dataGridViewMain.Width = 500;
+
         }
     }
 }

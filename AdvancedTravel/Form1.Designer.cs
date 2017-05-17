@@ -51,6 +51,7 @@
             this.columnDeparture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnArrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +119,7 @@
             this.btnNow.TabIndex = 4;
             this.btnNow.Text = "Now";
             this.btnNow.UseVisualStyleBackColor = true;
+            this.btnNow.Click += new System.EventHandler(this.btnNow_Click);
             // 
             // lblDate
             // 
@@ -262,12 +264,25 @@
             this.columnDuration.Name = "columnDuration";
             this.columnDuration.ReadOnly = true;
             // 
+            // btnStation
+            // 
+            this.btnStation.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnStation.Font = new System.Drawing.Font("Arial", 9F);
+            this.btnStation.Location = new System.Drawing.Point(45, 32);
+            this.btnStation.Name = "btnStation";
+            this.btnStation.Size = new System.Drawing.Size(129, 51);
+            this.btnStation.TabIndex = 17;
+            this.btnStation.Text = "Search for Station";
+            this.btnStation.UseVisualStyleBackColor = true;
+            this.btnStation.Click += new System.EventHandler(this.btnStation_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1012, 735);
+            this.Controls.Add(this.btnStation);
             this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShare);
@@ -317,6 +332,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnArrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDuration;
         private System.Windows.Forms.DataGridView dataGridViewMain;
+        private System.Windows.Forms.Button btnStation;
     }
 }
 
