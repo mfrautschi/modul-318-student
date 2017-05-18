@@ -34,7 +34,6 @@
             this.btnNow = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.btnLater = new System.Windows.Forms.Button();
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -56,10 +55,10 @@
             // btnSwitch
             // 
             this.btnSwitch.Image = ((System.Drawing.Image)(resources.GetObject("btnSwitch.Image")));
-            this.btnSwitch.Location = new System.Drawing.Point(340, 115);
+            this.btnSwitch.Location = new System.Drawing.Point(352, 121);
             this.btnSwitch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwitch.Name = "btnSwitch";
-            this.btnSwitch.Size = new System.Drawing.Size(29, 37);
+            this.btnSwitch.Size = new System.Drawing.Size(39, 37);
             this.btnSwitch.TabIndex = 3;
             this.btnSwitch.UseVisualStyleBackColor = true;
             this.btnSwitch.Click += new System.EventHandler(this.btnSwitch_Click);
@@ -77,10 +76,10 @@
             // btnNow
             // 
             this.btnNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnNow.Location = new System.Drawing.Point(250, 203);
+            this.btnNow.Location = new System.Drawing.Point(289, 213);
             this.btnNow.Margin = new System.Windows.Forms.Padding(2);
             this.btnNow.Name = "btnNow";
-            this.btnNow.Size = new System.Drawing.Size(92, 36);
+            this.btnNow.Size = new System.Drawing.Size(189, 36);
             this.btnNow.TabIndex = 4;
             this.btnNow.Text = "Now";
             this.btnNow.UseVisualStyleBackColor = true;
@@ -107,17 +106,6 @@
             this.lblTime.Size = new System.Drawing.Size(66, 26);
             this.lblTime.TabIndex = 12;
             this.lblTime.Text = "Time:";
-            // 
-            // btnLater
-            // 
-            this.btnLater.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnLater.Location = new System.Drawing.Point(367, 203);
-            this.btnLater.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLater.Name = "btnLater";
-            this.btnLater.Size = new System.Drawing.Size(92, 36);
-            this.btnLater.TabIndex = 5;
-            this.btnLater.Text = "Later";
-            this.btnLater.UseVisualStyleBackColor = true;
             // 
             // btnOn
             // 
@@ -270,7 +258,7 @@
             this.mySearchFieldTo.Location = new System.Drawing.Point(422, 93);
             this.mySearchFieldTo.Name = "mySearchFieldTo";
             this.mySearchFieldTo.Size = new System.Drawing.Size(293, 65);
-            this.mySearchFieldTo.TabIndex = 19;
+            this.mySearchFieldTo.TabIndex = 2;
             this.mySearchFieldTo.TextFieldLocation = new System.Drawing.Point(0, 31);
             this.mySearchFieldTo.TextFieldText = "";
             this.mySearchFieldTo.TextFieldWidth = 288;
@@ -282,7 +270,7 @@
             this.mySearchFieldFrom.Location = new System.Drawing.Point(34, 93);
             this.mySearchFieldFrom.Name = "mySearchFieldFrom";
             this.mySearchFieldFrom.Size = new System.Drawing.Size(293, 65);
-            this.mySearchFieldFrom.TabIndex = 20;
+            this.mySearchFieldFrom.TabIndex = 1;
             this.mySearchFieldFrom.TextFieldLocation = new System.Drawing.Point(0, 31);
             this.mySearchFieldFrom.TextFieldText = "";
             this.mySearchFieldFrom.TextFieldWidth = 288;
@@ -303,7 +291,6 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
-            this.Controls.Add(this.btnLater);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnNow);
@@ -324,7 +311,6 @@
         private System.Windows.Forms.Button btnNow;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Button btnLater;
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Button btnSearch;

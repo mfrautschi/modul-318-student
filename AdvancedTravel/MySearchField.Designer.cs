@@ -41,6 +41,7 @@
             this.txtSearch.Size = new System.Drawing.Size(288, 30);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // lblText
             // 
@@ -63,6 +64,7 @@
             this.lstSearch.TabIndex = 2;
             this.lstSearch.Visible = false;
             this.lstSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstSearch_MouseClick);
+            this.lstSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstSearch_KeyDown);
             // 
             // MySearchField
             // 

@@ -29,6 +29,7 @@ namespace AdvancedTravel
             mySearchFieldFrom.CloseListBox();
             mySearchFieldTo.LabelText = "To:";
             mySearchFieldTo.CloseListBox();
+            setLastSelect(new DateTime(1999));
         }
 
         private void btnSwitch_Click(object sender, EventArgs e)
@@ -91,17 +92,25 @@ namespace AdvancedTravel
 
         private void fillDataGridView()
         {
-            Connections lst = mTransport.GetConnections(mySearchFieldFrom.TextFieldText, mySearchFieldTo.TextFieldText);
-            foreach (Connection cn in lst.ConnectionList)
+            if (!mySearchFieldFrom.TextFieldText.Equals("") || !mySearchFieldTo.TextFieldText.Equals(""))
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dataGridViewMain);
-                row.Cells[0].Value = cn.From.Station.Name;
-                row.Cells[1].Value = cn.To.Station.Name;
-                row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
-                row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
-                row.Cells[4].Value = calcTimeDifference(cn.From.Departure, cn.To.Arrival);
-                dataGridViewMain.Rows.Add(row);
+                DateTime currentTime;
+                if (TimeUtils.checkTime(mySearchFieldFrom.LastSelect, out currentTime))
+                {
+                    Connections lst = mTransport.GetConnections(mySearchFieldFrom.TextFieldText, mySearchFieldTo.TextFieldText);
+                    foreach (Connection cn in lst.ConnectionList)
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(dataGridViewMain);
+                        row.Cells[0].Value = cn.From.Station.Name;
+                        row.Cells[1].Value = cn.To.Station.Name;
+                        row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
+                        row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
+                        row.Cells[4].Value = TimeUtils.calcTimeDifference(cn.From.Departure, cn.To.Arrival);
+                        dataGridViewMain.Rows.Add(row);
+                    }
+                }
+                setLastSelect(currentTime);
             }
         }
 
@@ -110,30 +119,14 @@ namespace AdvancedTravel
             return Convert.ToDateTime(datetime).ToString("HH:mm");   
         }
 
-        private String calcTimeDifference(String endTime, String startTime)
-        {
-            DateTime endDate = Convert.ToDateTime(endTime);
-            DateTime startDate = Convert.ToDateTime(startTime);
-            TimeSpan span = startDate.Subtract(endDate);
-            return span.ToString();
-        }
-
         private void calcControlls()
         {
             int mainY = 90;
             int mainX = 10;
 
-           
-            //TO
-            //lblTo.Location = new Point(mainX, mainY + 70);
-            mySearchFieldTo.Location = new Point(mainX, mainY + 65);
-            mySearchFieldTo.AllWidth(250);
-
-            //btnNow & btnLater
+            //btnNow
             btnNow.Location = new Point(mainX, mainY + 140);
-            btnNow.Width = 120;
-            btnLater.Location = new Point(mainX +130, mainY + 140);
-            btnLater.Width = 120;
+            btnNow.Width = 250;
 
             //Date
             lblDate.Location = new Point(mainX, mainY + 180);
@@ -159,8 +152,9 @@ namespace AdvancedTravel
 
             //MyUserControll
             mySearchFieldFrom.Location = new Point(mainX, mainY);
-            mySearchFieldFrom.TextFieldWidth = 250;
             mySearchFieldFrom.AllWidth(250);
+            mySearchFieldTo.Location = new Point(mainX, mainY + 65);
+            mySearchFieldTo.AllWidth(250);
 
             //DataGridView
             dataGridViewMain.Visible = true;
@@ -181,6 +175,12 @@ namespace AdvancedTravel
             }
         }
 
+        private void setLastSelect(DateTime value)
+        {
+            mySearchFieldFrom.LastSelect = value;
+            mySearchFieldTo.LastSelect = value;
+        }
+
         private void FormDefaultControllerVisible()
         {
             //Labels
@@ -190,7 +190,6 @@ namespace AdvancedTravel
 
             //Buttons
             btnNow.Visible = true;
-            btnLater.Visible = true;
             btnOn.Visible = true;
             btnOff.Visible = true;
             btnSwitch.Visible = false;
@@ -215,11 +214,9 @@ namespace AdvancedTravel
             //Labels
             lblDate.Visible = false;
             lblTime.Visible = false;
-
-
+            
             //Buttons
             btnNow.Visible = false;
-            btnLater.Visible = false;
             btnOn.Visible = false;
             btnOff.Visible = false;
             btnSwitch.Visible = false;

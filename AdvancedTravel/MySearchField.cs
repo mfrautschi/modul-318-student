@@ -12,6 +12,7 @@ namespace AdvancedTravel
 {
     public partial class MySearchField : UserControl
     {
+        DateTime lastSelect;
         public MySearchField()
         {
             InitializeComponent();
@@ -53,6 +54,13 @@ namespace AdvancedTravel
             get { return txtSearch.Width; }
             set { txtSearch.Width = value; }
         }
+
+        public DateTime LastSelect
+        {
+            get { return lastSelect; }
+            set { lastSelect = value; }
+        }
+
         /// <summary>
         /// Mit dieser Funktion setzt man die Länge von Textfield, ListBox und dem UserControll.
         /// </summary>
@@ -73,15 +81,20 @@ namespace AdvancedTravel
 
         private void fillListBox()
         {
-            lstSearch.Items.Clear();
-            SwissTransport.Transport tp = new SwissTransport.Transport();
-            SwissTransport.Stations stations = tp.GetStations(txtSearch.Text);
-            foreach (SwissTransport.Station station in stations.StationList)
+            DateTime currTime;
+            if (TimeUtils.checkTime(lastSelect, out currTime))
             {
-                lstSearch.Items.Add(station.Name);
+                lstSearch.Items.Clear();
+                SwissTransport.Transport tp = new SwissTransport.Transport();
+                SwissTransport.Stations stations = tp.GetStations(txtSearch.Text);
+                foreach (SwissTransport.Station station in stations.StationList)
+                {
+                    lstSearch.Items.Add(station.Name);
+                }
+                this.Height = 149;
+                lstSearch.Visible = true;
             }
-            this.Height = 149;
-            lstSearch.Visible = true;
+            setlastSelect(currTime);
         }
 
         private void MySearchField_Leave(object sender, EventArgs e)
@@ -97,8 +110,38 @@ namespace AdvancedTravel
 
         private void lstSearch_MouseClick(object sender, MouseEventArgs e)
         {
+            ValueToTextBox();
+            
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Down))
+            {
+                lstSearch.Focus();
+            }  
+        }
+
+        private void lstSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                ValueToTextBox();
+                CloseListBox();
+            }
+        }
+
+        private void ValueToTextBox() {
             txtSearch.Text = lstSearch.SelectedItem.ToString();
             CloseListBox();
+        }
+
+        /// <summary>
+        /// Sezt die lastTime variabel, die zur Zeitberechnung
+        /// </summary>
+        /// <param name="value"></param>
+        public void setlastSelect(DateTime value) {
+            lastSelect = value;
         }
     }
 }
