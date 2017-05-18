@@ -62,6 +62,7 @@
             this.lstSearch.Size = new System.Drawing.Size(288, 84);
             this.lstSearch.TabIndex = 2;
             this.lstSearch.Visible = false;
+            this.lstSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstSearch_MouseClick);
             // 
             // MySearchField
             // 
@@ -71,7 +72,8 @@
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtSearch);
             this.Name = "MySearchField";
-            this.Size = new System.Drawing.Size(293, 150);
+            this.Size = new System.Drawing.Size(293, 65);
+            this.Leave += new System.EventHandler(this.MySearchField_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

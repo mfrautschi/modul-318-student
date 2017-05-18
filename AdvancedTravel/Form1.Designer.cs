@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lblTo = new System.Windows.Forms.Label();
             this.btnSwitch = new System.Windows.Forms.Button();
-            this.txtTo = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnNow = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
@@ -50,21 +48,10 @@
             this.columnArrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnStation = new System.Windows.Forms.Button();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.txtFrom = new System.Windows.Forms.TextBox();
+            this.mySearchFieldTo = new AdvancedTravel.MySearchField();
+            this.mySearchFieldFrom = new AdvancedTravel.MySearchField();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(404, 93);
-            this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(42, 26);
-            this.lblTo.TabIndex = 14;
-            this.lblTo.Text = "To:";
             // 
             // btnSwitch
             // 
@@ -76,15 +63,6 @@
             this.btnSwitch.TabIndex = 3;
             this.btnSwitch.UseVisualStyleBackColor = true;
             this.btnSwitch.Click += new System.EventHandler(this.btnSwitch_Click);
-            // 
-            // txtTo
-            // 
-            this.txtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtTo.Location = new System.Drawing.Point(408, 121);
-            this.txtTo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(289, 30);
-            this.txtTo.TabIndex = 2;
             // 
             // dtpDate
             // 
@@ -285,25 +263,29 @@
             this.btnStation.UseVisualStyleBackColor = true;
             this.btnStation.Click += new System.EventHandler(this.btnStation_Click);
             // 
-            // lblFrom
+            // mySearchFieldTo
             // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblFrom.Location = new System.Drawing.Point(15, 91);
-            this.lblFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(69, 26);
-            this.lblFrom.TabIndex = 13;
-            this.lblFrom.Text = "From:";
+            this.mySearchFieldTo.LabelLocation = new System.Drawing.Point(0, 4);
+            this.mySearchFieldTo.LabelText = "LabelText:";
+            this.mySearchFieldTo.Location = new System.Drawing.Point(422, 93);
+            this.mySearchFieldTo.Name = "mySearchFieldTo";
+            this.mySearchFieldTo.Size = new System.Drawing.Size(293, 65);
+            this.mySearchFieldTo.TabIndex = 19;
+            this.mySearchFieldTo.TextFieldLocation = new System.Drawing.Point(0, 31);
+            this.mySearchFieldTo.TextFieldText = "";
+            this.mySearchFieldTo.TextFieldWidth = 288;
             // 
-            // txtFrom
+            // mySearchFieldFrom
             // 
-            this.txtFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtFrom.Location = new System.Drawing.Point(20, 119);
-            this.txtFrom.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(288, 30);
-            this.txtFrom.TabIndex = 1;
+            this.mySearchFieldFrom.LabelLocation = new System.Drawing.Point(0, 4);
+            this.mySearchFieldFrom.LabelText = "LabelText:";
+            this.mySearchFieldFrom.Location = new System.Drawing.Point(34, 93);
+            this.mySearchFieldFrom.Name = "mySearchFieldFrom";
+            this.mySearchFieldFrom.Size = new System.Drawing.Size(293, 65);
+            this.mySearchFieldFrom.TabIndex = 20;
+            this.mySearchFieldFrom.TextFieldLocation = new System.Drawing.Point(0, 31);
+            this.mySearchFieldFrom.TextFieldText = "";
+            this.mySearchFieldFrom.TextFieldWidth = 288;
             // 
             // Form1
             // 
@@ -311,6 +293,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(759, 597);
+            this.Controls.Add(this.mySearchFieldFrom);
+            this.Controls.Add(this.mySearchFieldTo);
             this.Controls.Add(this.btnStation);
             this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.label1);
@@ -324,11 +308,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnNow);
             this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.txtFrom);
-            this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnSwitch);
-            this.Controls.Add(this.lblTo);
-            this.Controls.Add(this.lblFrom);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -339,9 +319,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Button btnSwitch;
-        private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnNow;
         private System.Windows.Forms.Label lblDate;
@@ -360,8 +338,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDeparture;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnArrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDuration;
-        private System.Windows.Forms.Label lblFrom;
-        private System.Windows.Forms.TextBox txtFrom;
+        private MySearchField mySearchFieldTo;
+        private MySearchField mySearchFieldFrom;
     }
 }
 

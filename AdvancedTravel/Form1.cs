@@ -25,13 +25,19 @@ namespace AdvancedTravel
         {
             mTransport = new Transport();
             dataGridViewMain.Visible = false;
+            mySearchFieldFrom.LabelText = "From:";
+            mySearchFieldFrom.CloseListBox();
+            mySearchFieldTo.LabelText = "To:";
+            mySearchFieldTo.CloseListBox();
         }
 
         private void btnSwitch_Click(object sender, EventArgs e)
         {
-            String textvalue = txtFrom.Text;
-            txtFrom.Text = txtTo.Text;
-            txtTo.Text = textvalue;
+            String textvalue = mySearchFieldFrom.TextFieldText;
+            mySearchFieldFrom.TextFieldText = mySearchFieldTo.TextFieldText;
+            mySearchFieldTo.TextFieldText = textvalue;
+            mySearchFieldFrom.CloseListBox();
+            mySearchFieldTo.CloseListBox();
         }
 
         private void btnOn_Click(object sender, EventArgs e)
@@ -85,7 +91,7 @@ namespace AdvancedTravel
 
         private void fillDataGridView()
         {
-            Connections lst = mTransport.GetConnections(txtFrom.Text, txtTo.Text);
+            Connections lst = mTransport.GetConnections(mySearchFieldFrom.TextFieldText, mySearchFieldTo.TextFieldText);
             foreach (Connection cn in lst.ConnectionList)
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -117,15 +123,11 @@ namespace AdvancedTravel
             int mainY = 90;
             int mainX = 10;
 
-            //From
-            lblFrom.Location = new Point(mainX, mainY);
-            txtFrom.Location = new Point(mainX, mainY + 30);
-            txtFrom.Width = 250;
-
+           
             //TO
-            lblTo.Location = new Point(mainX, mainY + 70);
-            txtTo.Location = new Point(mainX, mainY + 100);
-            txtTo.Width = 250;
+            //lblTo.Location = new Point(mainX, mainY + 70);
+            mySearchFieldTo.Location = new Point(mainX, mainY + 65);
+            mySearchFieldTo.AllWidth(250);
 
             //btnNow & btnLater
             btnNow.Location = new Point(mainX, mainY + 140);
@@ -155,6 +157,11 @@ namespace AdvancedTravel
             btnSwitch.Visible = false;
             btnShare.Visible = false;
 
+            //MyUserControll
+            mySearchFieldFrom.Location = new Point(mainX, mainY);
+            mySearchFieldFrom.TextFieldWidth = 250;
+            mySearchFieldFrom.AllWidth(250);
+
             //DataGridView
             dataGridViewMain.Visible = true;
         }
@@ -177,46 +184,38 @@ namespace AdvancedTravel
         private void FormDefaultControllerVisible()
         {
             //Labels
-            lblFrom.Visible = true;
-            lblFrom.Text = "From:";
-            lblTo.Visible = true;
+
             lblDate.Visible = true;
             lblTime.Visible = true;
-
-            //TextFields
-            txtFrom.Visible = true;
-            txtTo.Visible = true;
 
             //Buttons
             btnNow.Visible = true;
             btnLater.Visible = true;
             btnOn.Visible = true;
             btnOff.Visible = true;
-            btnSwitch.Visible = true;
+            btnSwitch.Visible = false;
 
             //DateTimePicker
             dtpDate.Visible = true;
             dtpTime.Visible = true;
 
             //DataGridView
-            dataGridViewMain.Location = new Point(375, 134);
+            dataGridViewMain.Location = new Point(280, 109);
+            dataGridViewMain.Width = 469;
+            dataGridViewMain.Height = 479;
+
+            //MyUserControll
+            mySearchFieldFrom.Visible = true;
+            mySearchFieldFrom.LabelText = "From:";
+            mySearchFieldTo.Visible = true;
         }
 
         private void FormDefaultControllerDiVisible()
         {
             //Labels
-            lblFrom.Visible = true;
-            lblFrom.Text = "Station:";
-            lblFrom.Location = new Point(140, 80);
-            lblTo.Visible = false;
             lblDate.Visible = false;
             lblTime.Visible = false;
 
-            //TextFields
-            txtFrom.Visible = true;
-            txtFrom.Location = new Point(140, 110);
-            txtFrom.Width = 500;
-            txtTo.Visible = false;
 
             //Buttons
             btnNow.Visible = false;
@@ -238,6 +237,15 @@ namespace AdvancedTravel
             dataGridViewMain.Location = new Point(140, 300);
             dataGridViewMain.Height = 250;
             dataGridViewMain.Width = 500;
+            
+            //MyUserControll
+            mySearchFieldFrom.Visible = true;
+            mySearchFieldFrom.LabelText = "Station:";
+            mySearchFieldFrom.Location = new Point(140, 80);
+            mySearchFieldFrom.TextFieldWidth = 500;
+            mySearchFieldFrom.AllWidth(500);
+
+            mySearchFieldTo.Visible = false;
         }
     }
 }
