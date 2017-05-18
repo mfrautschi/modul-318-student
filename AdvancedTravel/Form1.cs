@@ -55,9 +55,27 @@ namespace AdvancedTravel
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            calcControlls();
-            clearDataGridView();
-            fillDataGridView();
+            if (isStation())
+            {
+                //getStationConnections();
+            }
+            else
+            {
+                calcControlls();
+                clearDataGridView();
+                fillDataGridView();
+            }
+        }
+                
+        /// <summary>
+        /// Findet heraus, ob die Stationsansicht oder die Fahrtenberechnung angezeigt wird.
+        /// </summary>
+        /// <returns>returns true if the Stationview is Visible</returns>
+        private Boolean isStation() {
+            if (btnStation.Text.Equals("Search for Timetable")) {
+                return true;
+            }
+            return false;
         }
 
         private void clearDataGridView()
@@ -74,16 +92,23 @@ namespace AdvancedTravel
                 row.CreateCells(dataGridViewMain);
                 row.Cells[0].Value = cn.From.Station.Name;
                 row.Cells[1].Value = cn.To.Station.Name;
-                row.Cells[2].Value = Convert.ToDateTime(cn.From.Departure).ToString("HH:mm");
-                row.Cells[3].Value = Convert.ToDateTime(cn.To.Arrival).ToString("HH:mm");
-                row.Cells[4].Value = calcTimeDifference(Convert.ToDateTime(cn.From.Departure), Convert.ToDateTime(cn.To.Arrival));
+                row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
+                row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
+                row.Cells[4].Value = calcTimeDifference(cn.From.Departure, cn.To.Arrival);
                 dataGridViewMain.Rows.Add(row);
             }
         }
 
-        private String calcTimeDifference(DateTime endTime, DateTime startTime)
+        private String ToDateTimeToString(String datetime)
         {
-            TimeSpan span = startTime.Subtract(endTime);
+            return Convert.ToDateTime(datetime).ToString("HH:mm");   
+        }
+
+        private String calcTimeDifference(String endTime, String startTime)
+        {
+            DateTime endDate = Convert.ToDateTime(endTime);
+            DateTime startDate = Convert.ToDateTime(startTime);
+            TimeSpan span = startDate.Subtract(endDate);
             return span.ToString();
         }
 
@@ -94,7 +119,7 @@ namespace AdvancedTravel
 
             //From
             lblFrom.Location = new Point(mainX, mainY);
-            txtFrom.Location = new Point(mainX, txtFrom.Location.Y);
+            txtFrom.Location = new Point(mainX, mainY + 30);
             txtFrom.Width = 250;
 
             //TO
@@ -143,6 +168,7 @@ namespace AdvancedTravel
             }
             else
             {
+                calcControlls();
                 FormDefaultControllerVisible();
                 btnStation.Text = "Search for Station";
             }
@@ -152,6 +178,7 @@ namespace AdvancedTravel
         {
             //Labels
             lblFrom.Visible = true;
+            lblFrom.Text = "From:";
             lblTo.Visible = true;
             lblDate.Visible = true;
             lblTime.Visible = true;
@@ -178,13 +205,17 @@ namespace AdvancedTravel
         private void FormDefaultControllerDiVisible()
         {
             //Labels
-            lblFrom.Visible = false;
+            lblFrom.Visible = true;
+            lblFrom.Text = "Station:";
+            lblFrom.Location = new Point(140, 80);
             lblTo.Visible = false;
             lblDate.Visible = false;
             lblTime.Visible = false;
 
             //TextFields
-            txtFrom.Visible = false;
+            txtFrom.Visible = true;
+            txtFrom.Location = new Point(140, 110);
+            txtFrom.Width = 500;
             txtTo.Visible = false;
 
             //Buttons
@@ -193,8 +224,11 @@ namespace AdvancedTravel
             btnOn.Visible = false;
             btnOff.Visible = false;
             btnSwitch.Visible = false;
+            btnSearch.Width = 500;
+            btnSearch.Height = 40;
+            btnSearch.Location = new Point(140, 250);
             btnShare.Location = new Point(btnShare.Location.X, 550);
-            
+
             //DateTimePicker
             dtpDate.Visible = false;
             dtpTime.Visible = false;
@@ -204,7 +238,6 @@ namespace AdvancedTravel
             dataGridViewMain.Location = new Point(140, 300);
             dataGridViewMain.Height = 250;
             dataGridViewMain.Width = 500;
-
         }
     }
 }
