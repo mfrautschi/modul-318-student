@@ -19,15 +19,13 @@ namespace AdvancedTravel
 
         private void btnStation_Click(object sender, EventArgs e)
         {
-            if (btnStation.Text.Equals("Search for Station"))
-            {
+            if (mySideSearchMain.Visible) {
                 FormDefaultControllerDiVisible();
-                btnStation.Text = "Search for Timetable";
+                btnStation.Text = "Search for Connection";
             }
-            else
-            {
+            else { 
                 FormDefaultControllerVisible();
-                btnStation.Text = "Search for Station";
+                btnStation.Text = "Search for Timetable";
             }
         }
 
@@ -44,6 +42,68 @@ namespace AdvancedTravel
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDeutsch_Click(object sender, EventArgs e)
+        {
+            setLanguageGerman();
+            btnDeutsch.BackColor = SystemColors.MenuHighlight;
+            btnEnglisch.BackColor = SystemColors.Window;
+            btnFranz.BackColor = SystemColors.Window;
+        }
+
+        private void btnEnglisch_Click(object sender, EventArgs e)
+        {
+            setLanguageEnglisch();
+            btnDeutsch.BackColor = SystemColors.Window;
+            btnEnglisch.BackColor = SystemColors.MenuHighlight;
+            btnFranz.BackColor = SystemColors.Window;
+        }
+
+        private void btnFranz_Click(object sender, EventArgs e)
+        {
+            setLanguageFranz();
+            btnDeutsch.BackColor = SystemColors.Window;
+            btnEnglisch.BackColor = SystemColors.Window;
+            btnFranz.BackColor = SystemColors.MenuHighlight;
+        }
+
+        private void setLanguageGerman() {
+            mySideSearchMain.German = "";
+            myStationSearchMain.German = "";
+            if (mySideSearchMain.Visible)
+            {
+                btnStation.Text = "Nach Fahrplan suchen";
+            }
+            else
+            {
+                btnStation.Text = "Nach Verbindung suchen";
+            }
+        }
+
+        private void setLanguageEnglisch()
+        {
+            mySideSearchMain.Englisch = "";
+            myStationSearchMain.Englisch = "";
+            if (mySideSearchMain.Visible)
+            {
+                btnStation.Text = "Search for Timetable";
+            }
+            else
+            {
+                btnStation.Text = "Search for Connection";
+            }
+        }
+
+        private void setLanguageFranz() {
+            mySideSearchMain.Franz = "";
+            myStationSearchMain.Franz = "";
+            if (mySideSearchMain.Visible) {
+                btnStation.Text = "Rechercher Station";
+            } else
+            {
+                btnStation.Text = "Rechercher Connexion";
+            }
         }
     }
 }

@@ -34,6 +34,9 @@
             this.myStationSearchMain = new AdvancedTravel.myStationSearch();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnStandardSearch = new System.Windows.Forms.Button();
+            this.btnDeutsch = new System.Windows.Forms.Button();
+            this.btnFranz = new System.Windows.Forms.Button();
+            this.btnEnglisch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mySideSearchMain
@@ -66,7 +69,7 @@
             this.btnStation.Name = "btnStation";
             this.btnStation.Size = new System.Drawing.Size(129, 50);
             this.btnStation.TabIndex = 18;
-            this.btnStation.Text = "Search for Station";
+            this.btnStation.Text = "Search for Timetable";
             this.btnStation.UseVisualStyleBackColor = true;
             this.btnStation.Click += new System.EventHandler(this.btnStation_Click);
             // 
@@ -101,13 +104,47 @@
             this.btnStandardSearch.TabIndex = 21;
             this.btnStandardSearch.Text = "Search";
             this.btnStandardSearch.UseVisualStyleBackColor = true;
-             // 
+            // 
+            // btnDeutsch
+            // 
+            this.btnDeutsch.Location = new System.Drawing.Point(939, 26);
+            this.btnDeutsch.Name = "btnDeutsch";
+            this.btnDeutsch.Size = new System.Drawing.Size(43, 36);
+            this.btnDeutsch.TabIndex = 22;
+            this.btnDeutsch.Text = "DE";
+            this.btnDeutsch.UseVisualStyleBackColor = true;
+            this.btnDeutsch.Click += new System.EventHandler(this.btnDeutsch_Click);
+            // 
+            // btnFranz
+            // 
+            this.btnFranz.Location = new System.Drawing.Point(988, 26);
+            this.btnFranz.Name = "btnFranz";
+            this.btnFranz.Size = new System.Drawing.Size(42, 36);
+            this.btnFranz.TabIndex = 23;
+            this.btnFranz.Text = "FR";
+            this.btnFranz.UseVisualStyleBackColor = true;
+            this.btnFranz.Click += new System.EventHandler(this.btnFranz_Click);
+            // 
+            // btnEnglisch
+            // 
+            this.btnEnglisch.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnEnglisch.Location = new System.Drawing.Point(1036, 26);
+            this.btnEnglisch.Name = "btnEnglisch";
+            this.btnEnglisch.Size = new System.Drawing.Size(44, 36);
+            this.btnEnglisch.TabIndex = 24;
+            this.btnEnglisch.Text = "EN";
+            this.btnEnglisch.UseVisualStyleBackColor = false;
+            this.btnEnglisch.Click += new System.EventHandler(this.btnEnglisch_Click);
+            // 
             // AdvancedTravelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1234, 767);
+            this.Controls.Add(this.btnEnglisch);
+            this.Controls.Add(this.btnFranz);
+            this.Controls.Add(this.btnDeutsch);
             this.Controls.Add(this.btnStandardSearch);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.myStationSearchMain);
@@ -129,5 +166,8 @@
         private myStationSearch myStationSearchMain;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnStandardSearch;
+        private System.Windows.Forms.Button btnDeutsch;
+        private System.Windows.Forms.Button btnFranz;
+        private System.Windows.Forms.Button btnEnglisch;
     }
 }

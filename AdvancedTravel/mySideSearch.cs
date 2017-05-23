@@ -140,5 +140,46 @@ namespace AdvancedTravel
         {
             mySearchFieldFrom.BringToFront();
         }
+
+        public string Englisch {
+
+            set {
+                mySearchFieldFrom.LabelText = "From:";
+                mySearchFieldTo.LabelText = "To:";
+                btnNow.Text = "Now"; btnOn.Text = "ON";
+                btnOff.Text = "OFF";
+                lblDate.Text = "Date:";
+                lblTime.Text = "Time:";
+                btnSearch.Text = "SEARCH";
+            }
+        }
+
+        public string German {
+            set
+            {
+                mySearchFieldFrom.LabelText = "Von:";
+                mySearchFieldTo.LabelText = "Zu:";
+                btnNow.Text = "Jetzt";
+                btnOn.Text = "AB";
+                btnOff.Text = "AN";
+                lblDate.Text = "Datum:";
+                lblTime.Text = "Zeit:";
+                btnSearch.Text = "SUCHEN";
+            }
+        }
+
+        public string Franz {
+            set
+            {
+                mySearchFieldFrom.LabelText = "De:";
+                mySearchFieldTo.LabelText = "À:";
+                btnNow.Text = "Maintenant";
+                btnOn.Text = "DE";
+                btnOff.Text = "À";
+                lblDate.Text = "Date:";
+                lblTime.Text = "Temps:";
+                btnSearch.Text = "CHERCHER";
+            }
+        }
     }
 }

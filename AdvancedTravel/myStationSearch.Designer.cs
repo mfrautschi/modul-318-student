@@ -56,7 +56,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnSearch.Location = new System.Drawing.Point(86, 165);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(413, 51);
+            this.btnSearch.Size = new System.Drawing.Size(454, 51);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;

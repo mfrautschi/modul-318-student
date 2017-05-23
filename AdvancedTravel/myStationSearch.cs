@@ -30,7 +30,6 @@ namespace AdvancedTravel
         {
             dataGridViewStation.Rows.Clear();
             getStationConnections();
-
         }
 
         private void getStationConnections(){
@@ -58,7 +57,6 @@ namespace AdvancedTravel
             DateTime currTime;
             if (TimeUtils.checkTime(lastSelect, out currTime))
             {
-                
                 SwissTransport.Transport tp = new SwissTransport.Transport();
                 SwissTransport.Stations stations = tp.GetStations(mySearchFieldMain.TextFieldText);
                 foreach (SwissTransport.Station station in stations.StationList)
@@ -71,8 +69,33 @@ namespace AdvancedTravel
             return "";
         }
 
-        private void setlastSelect(DateTime value) {
+        private void setlastSelect(DateTime value)
+        {
             lastSelect = value;
+        }
+
+        public string German
+        {
+            set
+            {
+                btnSearch.Text = "SUCHEN";
+            }
+        }
+
+        public string Englisch
+        {
+            set
+            {
+                btnSearch.Text = "SEARCH";
+            }
+        }
+
+        public string Franz
+        {
+            set
+            {
+                btnSearch.Text = "CHERCHER";
+            }
         }
     }
 }

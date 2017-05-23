@@ -67,12 +67,12 @@ namespace SwissTransport
             return null;
         }
         
-        public Connections GetConnectionsSpecificTime(string fromStation, string toStation, System.DateTime date, bool IsArrivalTime = true)
+        public Connections GetConnectionsSpecificTime(string fromStation, string toStation, System.DateTime date, bool onoff = true)
         {
                 var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStation +
                 "&date=" + date.ToString("yyyy-MM-dd") +
                 "&time=" + date.ToString("HH:mm") +
-                "&isArrivalTime=" + (IsArrivalTime ? "1" : "0"));
+                "&isArrivalTime=" + (onoff ? "1" : "0"));
 
                 var response = request.GetResponse();
                 var responseStream = response.GetResponseStream();
