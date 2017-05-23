@@ -43,7 +43,7 @@
             this.mySearchFieldMain.LabelText = "LabelText:";
             this.mySearchFieldMain.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldMain.Location = new System.Drawing.Point(86, 0);
-            this.mySearchFieldMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mySearchFieldMain.Margin = new System.Windows.Forms.Padding(4);
             this.mySearchFieldMain.Name = "mySearchFieldMain";
             this.mySearchFieldMain.Size = new System.Drawing.Size(391, 80);
             this.mySearchFieldMain.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.dataGridViewStation.RowHeadersVisible = false;
             this.dataGridViewStation.RowTemplate.Height = 24;
             this.dataGridViewStation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewStation.Size = new System.Drawing.Size(413, 410);
+            this.dataGridViewStation.Size = new System.Drawing.Size(454, 410);
             this.dataGridViewStation.TabIndex = 11;
             // 
             // colFrom

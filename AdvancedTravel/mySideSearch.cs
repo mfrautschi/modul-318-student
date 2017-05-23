@@ -130,5 +130,15 @@ namespace AdvancedTravel
             DateTime time = dtmTime.Value;
            dtmDate.Value = date.Date + time.TimeOfDay;
         }
+
+        private void mySearchFieldTo_Enter(object sender, EventArgs e)
+        {
+            mySearchFieldTo.BringToFront();
+        }
+
+        private void mySearchFieldFrom_Enter(object sender, EventArgs e)
+        {
+            mySearchFieldFrom.BringToFront();
+        }
     }
 }

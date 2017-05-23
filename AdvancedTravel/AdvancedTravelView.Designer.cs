@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnStation = new System.Windows.Forms.Button();
             this.myStationSearchMain = new AdvancedTravel.myStationSearch();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnStandardSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mySideSearchMain
@@ -39,6 +41,7 @@
             this.mySideSearchMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mySideSearchMain.BackColor = System.Drawing.SystemColors.Window;
             this.mySideSearchMain.Location = new System.Drawing.Point(12, 93);
             this.mySideSearchMain.Name = "mySideSearchMain";
             this.mySideSearchMain.Size = new System.Drawing.Size(1210, 597);
@@ -76,12 +79,37 @@
             this.myStationSearchMain.TabIndex = 19;
             this.myStationSearchMain.Visible = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnExit.Location = new System.Drawing.Point(1118, 24);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(104, 40);
+            this.btnExit.TabIndex = 20;
+            this.btnExit.Text = "&Canc&el";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnStandardSearch
+            // 
+            this.btnStandardSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStandardSearch.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnStandardSearch.Location = new System.Drawing.Point(30, 696);
+            this.btnStandardSearch.Name = "btnStandardSearch";
+            this.btnStandardSearch.Size = new System.Drawing.Size(104, 40);
+            this.btnStandardSearch.TabIndex = 21;
+            this.btnStandardSearch.Text = "Search";
+            this.btnStandardSearch.UseVisualStyleBackColor = true;
+             // 
             // AdvancedTravelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1234, 767);
+            this.Controls.Add(this.btnStandardSearch);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.myStationSearchMain);
             this.Controls.Add(this.btnStation);
             this.Controls.Add(this.label1);
@@ -99,5 +127,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStation;
         private myStationSearch myStationSearchMain;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnStandardSearch;
     }
 }

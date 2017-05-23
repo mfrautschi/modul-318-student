@@ -53,13 +53,14 @@
             this.mySearchFieldFrom.LabelText = "LabelText:";
             this.mySearchFieldFrom.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldFrom.Location = new System.Drawing.Point(0, -1);
-            this.mySearchFieldFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mySearchFieldFrom.Margin = new System.Windows.Forms.Padding(4);
             this.mySearchFieldFrom.Name = "mySearchFieldFrom";
             this.mySearchFieldFrom.Size = new System.Drawing.Size(388, 80);
             this.mySearchFieldFrom.TabIndex = 0;
             this.mySearchFieldFrom.TextFieldLocation = new System.Drawing.Point(0, 38);
             this.mySearchFieldFrom.TextFieldText = "";
             this.mySearchFieldFrom.TextFieldWidth = 383;
+            this.mySearchFieldFrom.Enter += new System.EventHandler(this.mySearchFieldFrom_Enter);
             // 
             // mySearchFieldTo
             // 
@@ -67,13 +68,14 @@
             this.mySearchFieldTo.LabelText = "LabelText:";
             this.mySearchFieldTo.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldTo.Location = new System.Drawing.Point(0, 97);
-            this.mySearchFieldTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mySearchFieldTo.Margin = new System.Windows.Forms.Padding(4);
             this.mySearchFieldTo.Name = "mySearchFieldTo";
             this.mySearchFieldTo.Size = new System.Drawing.Size(388, 80);
             this.mySearchFieldTo.TabIndex = 1;
             this.mySearchFieldTo.TextFieldLocation = new System.Drawing.Point(0, 38);
             this.mySearchFieldTo.TextFieldText = "";
             this.mySearchFieldTo.TextFieldWidth = 383;
+            this.mySearchFieldTo.Enter += new System.EventHandler(this.mySearchFieldTo_Enter);
             // 
             // btnNow
             // 
@@ -125,12 +127,13 @@
             // 
             // btnOn
             // 
+            this.btnOn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnOn.Location = new System.Drawing.Point(199, 337);
             this.btnOn.Name = "btnOn";
             this.btnOn.Size = new System.Drawing.Size(54, 43);
             this.btnOn.TabIndex = 5;
             this.btnOn.Text = "ON";
-            this.btnOn.UseVisualStyleBackColor = true;
+            this.btnOn.UseVisualStyleBackColor = false;
             this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
             // 
             // btnOff
@@ -216,6 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.mySearchFieldFrom);
             this.Controls.Add(this.dataGridViewConnection);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnOff);
@@ -226,7 +230,6 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnNow);
             this.Controls.Add(this.mySearchFieldTo);
-            this.Controls.Add(this.mySearchFieldFrom);
             this.Name = "mySideSearch";
             this.Size = new System.Drawing.Size(1130, 470);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConnection)).EndInit();

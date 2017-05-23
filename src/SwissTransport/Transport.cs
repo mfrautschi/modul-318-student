@@ -8,18 +8,29 @@ namespace SwissTransport
     {
         public Stations GetStations(string query)
         {
-            var request = CreateWebRequest("http://transport.opendata.ch/v1/locations?query=" + query);
-            var response = request.GetResponse();
-            var responseStream = response.GetResponseStream();
-
-            if (responseStream != null)
+            try
             {
-                var message = new StreamReader(responseStream).ReadToEnd();
-                var stations = JsonConvert.DeserializeObject<Stations>(message);
-                return stations;
-            }
+                var request = CreateWebRequest("http://transport.opendata.ch/v1/locations?query=" + query);
+                var response = request.GetResponse();
+                var responseStream = response.GetResponseStream();
 
-            return null;
+                if (responseStream != null)
+                {
+                    var message = new StreamReader(responseStream).ReadToEnd();
+                    var stations = JsonConvert.DeserializeObject<Stations>(message);
+                    return stations;
+                }
+
+                return null;
+            }
+            catch (WebException e) {
+                string exeption = e.Message;
+                return null;
+                /*
+                This Expetion will mostly thrown, if the User types to fast
+                and so it will give more then 3 Requests per Second to the API.
+                */
+            }
         }
 
         public StationBoardRoot GetStationBoard(string station, string id)
