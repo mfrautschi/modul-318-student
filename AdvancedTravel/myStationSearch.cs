@@ -74,28 +74,19 @@ namespace AdvancedTravel
             lastSelect = value;
         }
 
-        public string German
+        public void setGerman()
         {
-            set
-            {
                 btnSearch.Text = "SUCHEN";
-            }
         }
 
-        public string Englisch
+        public void  setEnglisch()
         {
-            set
-            {
                 btnSearch.Text = "SEARCH";
-            }
         }
 
-        public string Franz
+        public void setFranz()
         {
-            set
-            {
                 btnSearch.Text = "CHERCHER";
-            }
         }
     }
 }

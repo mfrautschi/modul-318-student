@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mySearchFieldMain = new AdvancedTravel.MySearchField();
+            this.mySearchFieldMain = new AdvancedTravel.mySearchField();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewStation = new System.Windows.Forms.DataGridView();
             this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,18 +39,15 @@
             // 
             // mySearchFieldMain
             // 
-            this.mySearchFieldMain.LabelLocation = new System.Drawing.Point(0, 5);
-            this.mySearchFieldMain.LabelText = "LabelText:";
+             this.mySearchFieldMain.LabelText = "LabelText:";
             this.mySearchFieldMain.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldMain.Location = new System.Drawing.Point(86, 0);
             this.mySearchFieldMain.Margin = new System.Windows.Forms.Padding(4);
             this.mySearchFieldMain.Name = "mySearchFieldMain";
             this.mySearchFieldMain.Size = new System.Drawing.Size(391, 80);
             this.mySearchFieldMain.TabIndex = 0;
-            this.mySearchFieldMain.TextFieldLocation = new System.Drawing.Point(0, 38);
             this.mySearchFieldMain.TextFieldText = "";
-            this.mySearchFieldMain.TextFieldWidth = 383;
-            // 
+             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
@@ -118,7 +115,7 @@
 
         #endregion
 
-        private MySearchField mySearchFieldMain;
+        private mySearchField mySearchFieldMain;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridViewStation;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFrom;

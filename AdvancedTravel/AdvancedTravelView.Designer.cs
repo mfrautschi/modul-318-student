@@ -67,7 +67,7 @@
             this.btnStation.Location = new System.Drawing.Point(56, 24);
             this.btnStation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStation.Name = "btnStation";
-            this.btnStation.Size = new System.Drawing.Size(129, 50);
+            this.btnStation.Size = new System.Drawing.Size(147, 50);
             this.btnStation.TabIndex = 18;
             this.btnStation.Text = "Search for Timetable";
             this.btnStation.UseVisualStyleBackColor = true;

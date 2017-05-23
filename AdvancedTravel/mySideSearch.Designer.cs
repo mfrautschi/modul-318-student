@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mySearchFieldFrom = new AdvancedTravel.MySearchField();
-            this.mySearchFieldTo = new AdvancedTravel.MySearchField();
+            this.mySearchFieldFrom = new AdvancedTravel.mySearchField();
+            this.mySearchFieldTo = new AdvancedTravel.mySearchField();
             this.btnNow = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
@@ -49,7 +49,6 @@
             // 
             // mySearchFieldFrom
             // 
-            this.mySearchFieldFrom.LabelLocation = new System.Drawing.Point(0, 5);
             this.mySearchFieldFrom.LabelText = "LabelText:";
             this.mySearchFieldFrom.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldFrom.Location = new System.Drawing.Point(0, -1);
@@ -57,25 +56,20 @@
             this.mySearchFieldFrom.Name = "mySearchFieldFrom";
             this.mySearchFieldFrom.Size = new System.Drawing.Size(388, 80);
             this.mySearchFieldFrom.TabIndex = 0;
-            this.mySearchFieldFrom.TextFieldLocation = new System.Drawing.Point(0, 38);
-            this.mySearchFieldFrom.TextFieldText = "";
-            this.mySearchFieldFrom.TextFieldWidth = 383;
-            this.mySearchFieldFrom.Enter += new System.EventHandler(this.mySearchFieldFrom_Enter);
+             this.mySearchFieldFrom.TextFieldText = "";
+             this.mySearchFieldFrom.Enter += new System.EventHandler(this.mySearchFieldFrom_Enter);
             // 
             // mySearchFieldTo
             // 
-            this.mySearchFieldTo.LabelLocation = new System.Drawing.Point(0, 5);
-            this.mySearchFieldTo.LabelText = "LabelText:";
+             this.mySearchFieldTo.LabelText = "LabelText:";
             this.mySearchFieldTo.LastSelect = new System.DateTime(((long)(0)));
             this.mySearchFieldTo.Location = new System.Drawing.Point(0, 97);
             this.mySearchFieldTo.Margin = new System.Windows.Forms.Padding(4);
             this.mySearchFieldTo.Name = "mySearchFieldTo";
             this.mySearchFieldTo.Size = new System.Drawing.Size(388, 80);
             this.mySearchFieldTo.TabIndex = 1;
-            this.mySearchFieldTo.TextFieldLocation = new System.Drawing.Point(0, 38);
             this.mySearchFieldTo.TextFieldText = "";
-            this.mySearchFieldTo.TextFieldWidth = 383;
-            this.mySearchFieldTo.Enter += new System.EventHandler(this.mySearchFieldTo_Enter);
+             this.mySearchFieldTo.Enter += new System.EventHandler(this.mySearchFieldTo_Enter);
             // 
             // btnNow
             // 
@@ -240,8 +234,8 @@
 
         #endregion
 
-        private MySearchField mySearchFieldFrom;
-        private MySearchField mySearchFieldTo;
+        private mySearchField mySearchFieldFrom;
+        private mySearchField mySearchFieldTo;
         private System.Windows.Forms.Button btnNow;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;

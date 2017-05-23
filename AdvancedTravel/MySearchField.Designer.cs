@@ -1,6 +1,6 @@
 ﻿namespace AdvancedTravel
 {
-    partial class MySearchField
+    partial class mySearchField
     {
         /// <summary> 
         /// Erforderliche Designervariable.

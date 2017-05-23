@@ -51,11 +51,11 @@
     <Compile Include="AdvancedTravelView.Designer.cs">
       <DependentUpon>AdvancedTravelView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySearchField.cs">
+    <Compile Include="mySearchField.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MySearchField.Designer.cs">
-      <DependentUpon>MySearchField.cs</DependentUpon>
+    <Compile Include="mySearchField.Designer.cs">
+      <DependentUpon>mySearchField.cs</DependentUpon>
     </Compile>
     <Compile Include="mySideSearch.cs">
       <SubType>UserControl</SubType>
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="AdvancedTravelView.resx">
       <DependentUpon>AdvancedTravelView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MySearchField.resx">
-      <DependentUpon>MySearchField.cs</DependentUpon>
+    <EmbeddedResource Include="mySearchField.resx">
+      <DependentUpon>mySearchField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mySideSearch.resx">
       <DependentUpon>mySideSearch.cs</DependentUpon>

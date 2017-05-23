@@ -20,21 +20,21 @@ namespace AdvancedTravel
         private void btnStation_Click(object sender, EventArgs e)
         {
             if (mySideSearchMain.Visible) {
-                FormDefaultControllerDiVisible();
+                formDefaultControllerDiVisible();
                 btnStation.Text = "Search for Connection";
             }
             else { 
-                FormDefaultControllerVisible();
+                formDefaultControllerVisible();
                 btnStation.Text = "Search for Timetable";
             }
         }
 
-        private void FormDefaultControllerDiVisible() {
+        private void formDefaultControllerDiVisible() {
             mySideSearchMain.Visible = false;
             myStationSearchMain.Visible = true;
         }
 
-        private void FormDefaultControllerVisible() {
+        private void formDefaultControllerVisible() {
             mySideSearchMain.Visible = true;
             myStationSearchMain.Visible = false;
         }
@@ -69,8 +69,8 @@ namespace AdvancedTravel
         }
 
         private void setLanguageGerman() {
-            mySideSearchMain.German = "";
-            myStationSearchMain.German = "";
+            mySideSearchMain.setGerman();
+            myStationSearchMain.setGerman();
             if (mySideSearchMain.Visible)
             {
                 btnStation.Text = "Nach Fahrplan suchen";
@@ -83,8 +83,8 @@ namespace AdvancedTravel
 
         private void setLanguageEnglisch()
         {
-            mySideSearchMain.Englisch = "";
-            myStationSearchMain.Englisch = "";
+            mySideSearchMain.setEnglisch();
+            myStationSearchMain.setEnglisch();
             if (mySideSearchMain.Visible)
             {
                 btnStation.Text = "Search for Timetable";
@@ -96,8 +96,8 @@ namespace AdvancedTravel
         }
 
         private void setLanguageFranz() {
-            mySideSearchMain.Franz = "";
-            myStationSearchMain.Franz = "";
+            mySideSearchMain.setFranz();
+            myStationSearchMain.setFranz();
             if (mySideSearchMain.Visible) {
                 btnStation.Text = "Rechercher Station";
             } else

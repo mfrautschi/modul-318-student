@@ -19,6 +19,9 @@ namespace AdvancedTravel
             InitializeController();
         }
 
+        /// <summary>
+        /// Hier werden die Starteinstellungen von Controllers gesetzt.
+        /// </summary>
         private void InitializeController() {
             mySearchFieldFrom.LabelText = "From:";
             mySearchFieldTo.LabelText = "To:";
@@ -58,8 +61,8 @@ namespace AdvancedTravel
                         row.CreateCells(dataGridViewConnection);
                         row.Cells[0].Value = cn.From.Station.Name;
                         row.Cells[1].Value = cn.To.Station.Name;
-                        row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
-                        row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
+                        row.Cells[2].Value = toDateTimeToString(cn.From.Departure);
+                        row.Cells[3].Value = toDateTimeToString(cn.To.Arrival);
                         row.Cells[4].Value = TimeUtils.calcTimeDifference(cn.From.Departure, cn.To.Arrival);
                         dataGridViewConnection.Rows.Add(row);
                     }
@@ -82,8 +85,8 @@ namespace AdvancedTravel
                         row.CreateCells(dataGridViewConnection);
                         row.Cells[0].Value = cn.From.Station.Name;
                         row.Cells[1].Value = cn.To.Station.Name;
-                        row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
-                        row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
+                        row.Cells[2].Value = toDateTimeToString(cn.From.Departure);
+                        row.Cells[3].Value = toDateTimeToString(cn.To.Arrival);
                         row.Cells[4].Value = TimeUtils.calcTimeDifference(cn.From.Departure, cn.To.Arrival);
                         dataGridViewConnection.Rows.Add(row);
                     }
@@ -92,7 +95,7 @@ namespace AdvancedTravel
             }
         }
 
-        private String ToDateTimeToString(String datetime)
+        private String toDateTimeToString(String datetime)
         {
             return Convert.ToDateTime(datetime).ToString("HH:mm");
         }
@@ -141,9 +144,10 @@ namespace AdvancedTravel
             mySearchFieldFrom.BringToFront();
         }
 
-        public string Englisch {
-
-            set {
+        /// <summary>
+        /// Ändert die Texte auf Englisch.
+        /// </summary>
+        public void setEnglisch() {
                 mySearchFieldFrom.LabelText = "From:";
                 mySearchFieldTo.LabelText = "To:";
                 btnNow.Text = "Now"; btnOn.Text = "ON";
@@ -151,12 +155,12 @@ namespace AdvancedTravel
                 lblDate.Text = "Date:";
                 lblTime.Text = "Time:";
                 btnSearch.Text = "SEARCH";
-            }
         }
 
-        public string German {
-            set
-            {
+        /// <summary>
+        /// Ändert die Texte auf Deutsch.
+        /// </summary>
+        public void setGerman() {
                 mySearchFieldFrom.LabelText = "Von:";
                 mySearchFieldTo.LabelText = "Zu:";
                 btnNow.Text = "Jetzt";
@@ -165,12 +169,12 @@ namespace AdvancedTravel
                 lblDate.Text = "Datum:";
                 lblTime.Text = "Zeit:";
                 btnSearch.Text = "SUCHEN";
-            }
         }
 
-        public string Franz {
-            set
-            {
+        /// <summary>
+        /// Ändert die Texte auf Französisch
+        /// </summary>
+        public void setFranz() {
                 mySearchFieldFrom.LabelText = "De:";
                 mySearchFieldTo.LabelText = "À:";
                 btnNow.Text = "Maintenant";
@@ -179,7 +183,6 @@ namespace AdvancedTravel
                 lblDate.Text = "Date:";
                 lblTime.Text = "Temps:";
                 btnSearch.Text = "CHERCHER";
-            }
         }
     }
 }
