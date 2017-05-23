@@ -78,6 +78,7 @@
             this.dataGridViewStation.Location = new System.Drawing.Point(86, 222);
             this.dataGridViewStation.MultiSelect = false;
             this.dataGridViewStation.Name = "dataGridViewStation";
+            this.dataGridViewStation.RowHeadersVisible = false;
             this.dataGridViewStation.RowTemplate.Height = 24;
             this.dataGridViewStation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewStation.Size = new System.Drawing.Size(413, 410);

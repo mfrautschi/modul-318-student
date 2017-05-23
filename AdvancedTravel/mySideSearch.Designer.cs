@@ -111,7 +111,7 @@
             this.dtmDate.Location = new System.Drawing.Point(19, 285);
             this.dtmDate.Name = "dtmDate";
             this.dtmDate.Size = new System.Drawing.Size(362, 22);
-            this.dtmDate.TabIndex = 5;
+            this.dtmDate.TabIndex = 3;
             // 
             // dtmTime
             // 
@@ -120,14 +120,15 @@
             this.dtmTime.Name = "dtmTime";
             this.dtmTime.ShowUpDown = true;
             this.dtmTime.Size = new System.Drawing.Size(105, 22);
-            this.dtmTime.TabIndex = 6;
+            this.dtmTime.TabIndex = 4;
+            this.dtmTime.ValueChanged += new System.EventHandler(this.timeValueChanged);
             // 
             // btnOn
             // 
             this.btnOn.Location = new System.Drawing.Point(199, 337);
             this.btnOn.Name = "btnOn";
             this.btnOn.Size = new System.Drawing.Size(54, 43);
-            this.btnOn.TabIndex = 7;
+            this.btnOn.TabIndex = 5;
             this.btnOn.Text = "ON";
             this.btnOn.UseVisualStyleBackColor = true;
             this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
@@ -137,7 +138,7 @@
             this.btnOff.Location = new System.Drawing.Point(273, 337);
             this.btnOff.Name = "btnOff";
             this.btnOff.Size = new System.Drawing.Size(54, 43);
-            this.btnOff.TabIndex = 8;
+            this.btnOff.TabIndex = 6;
             this.btnOff.Text = "OFF";
             this.btnOff.UseVisualStyleBackColor = true;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
@@ -148,7 +149,7 @@
             this.btnSearch.Location = new System.Drawing.Point(3, 405);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(378, 51);
-            this.btnSearch.TabIndex = 9;
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -170,6 +171,7 @@
             this.colDuration});
             this.dataGridViewConnection.Location = new System.Drawing.Point(450, 18);
             this.dataGridViewConnection.Name = "dataGridViewConnection";
+            this.dataGridViewConnection.RowHeadersVisible = false;
             this.dataGridViewConnection.RowTemplate.Height = 24;
             this.dataGridViewConnection.Size = new System.Drawing.Size(666, 438);
             this.dataGridViewConnection.TabIndex = 10;

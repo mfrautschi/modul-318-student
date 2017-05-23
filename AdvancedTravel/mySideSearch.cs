@@ -68,6 +68,30 @@ namespace AdvancedTravel
             }
         }
 
+        private void fillDataGridViewDate() {
+            if (!mySearchFieldFrom.TextFieldText.Equals("") || !mySearchFieldTo.TextFieldText.Equals(""))
+            {
+                DateTime currentTime;
+                if (TimeUtils.checkTime(mySearchFieldFrom.LastSelect, out currentTime))
+                {
+                    Transport transport = new Transport();
+                    Connections lst = transport.GetConnectionsSpecificTime(mySearchFieldFrom.TextFieldText, mySearchFieldTo.TextFieldText, dtmDate.Value, getOnOff());
+                    foreach (Connection cn in lst.ConnectionList)
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(dataGridViewConnection);
+                        row.Cells[0].Value = cn.From.Station.Name;
+                        row.Cells[1].Value = cn.To.Station.Name;
+                        row.Cells[2].Value = ToDateTimeToString(cn.From.Departure);
+                        row.Cells[3].Value = ToDateTimeToString(cn.To.Arrival);
+                        row.Cells[4].Value = TimeUtils.calcTimeDifference(cn.From.Departure, cn.To.Arrival);
+                        dataGridViewConnection.Rows.Add(row);
+                    }
+                }
+                setLastSelect(currentTime);
+            }
+        }
+
         private String ToDateTimeToString(String datetime)
         {
             return Convert.ToDateTime(datetime).ToString("HH:mm");
@@ -82,13 +106,29 @@ namespace AdvancedTravel
         private void btnSearch_Click(object sender, EventArgs e)
         {
             clearDataGridView();
-            fillDataGridView();
+            fillDataGridViewDate();
         }
 
         private void btnNow_Click(object sender, EventArgs e)
         {
             clearDataGridView();
             fillDataGridView();
+        }
+
+        private Boolean getOnOff() {
+            if (btnOn.BackColor.Equals(SystemColors.MenuHighlight)) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        private void timeValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = dtmDate.Value;
+            DateTime time = dtmTime.Value;
+           dtmDate.Value = date.Date + time.TimeOfDay;
         }
     }
 }
